@@ -345,13 +345,13 @@ class FileCache
 			# We have to check if the file still exists before calling unlink()
 			#
 
-			if (!file_exists($file))
+			if (!is_file($file))
 			{
 				continue;
 			}
 
-			$n++;
 			unlink($file);
+			$n++;
 		}
 
 		chdir($location);
